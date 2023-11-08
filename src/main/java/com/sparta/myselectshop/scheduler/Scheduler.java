@@ -29,7 +29,7 @@ public class Scheduler {
         List<Product> productList = productRepository.findAll();
         for (Product product : productList) {
             // 1초에 한 상품 씩 조회합니다 (NAVER 제한)
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(10);
 
             // i 번째 관심 상품의 제목으로 검색을 실행합니다.
             String title = product.getTitle();
