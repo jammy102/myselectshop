@@ -1,5 +1,8 @@
 #!/bin/sh
 
+- name: Add permission
+  run: chmod +x gradlew
+
 #
 # Copyright © 2015-2021 the original authors.
 #
