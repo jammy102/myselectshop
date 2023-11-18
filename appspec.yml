@@ -1,18 +1,23 @@
 version: 0.0
 os: linux
+
 files:
   - source:  /
-    destination: /home/chgogo/action
+    destination: /home/ubuntu/app
     overwrite: yes
 
 permissions:
   - object: /
     pattern: "**"
-    owner: chgogo
-    group: chgogo
+    owner: ubuntu
+    group: ubuntu
 
 hooks:
-  ApplicationStart:
-    - location: scripts/deploy.sh
+  AfterInstall:
+    - location: scripts/stop.sh
       timeout: 60
-      runas: chgogo
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 60
+      runas: ubuntu
